@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         currentShootingRate = shootingRate;
         shotTimer = shootingRate;
+        currentAttackDamage = baseAttackDamage;
     }
     void Update()
     {
@@ -131,9 +132,9 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         Transform laser1 = Instantiate(laserPrefab, firePoint1.position, this.transform.rotation);
-        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget);
+        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
         Transform laser2 = Instantiate(laserPrefab, firePoint2.position, this.transform.rotation);
-        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget);
+        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
     }
 
     private void HandleInput()

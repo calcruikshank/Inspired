@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d81d1fc80526e949bfaefb7d3af9132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 60
 --- !u!58 &400649660
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1091,6 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d81d1fc80526e949bfaefb7d3af9132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 60
 --- !u!58 &1907189279
 CircleCollider2D:
   m_ObjectHideFlags: 0
