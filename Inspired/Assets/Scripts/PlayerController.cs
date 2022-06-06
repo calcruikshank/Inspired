@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour
     float currentRange;
     float bonusRange;
 
-    float shootingRate = .5f;
+    float shootingRate = 1f;
     float currentShootingRate;
     float bonusShootingRate;
-    float shotTimer = .5f;
+    float shotTimer = 1f;
 
     Transform currentTarget = null;
     float distanceBetweenPlayerAndTarget;
