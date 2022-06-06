@@ -18,7 +18,7 @@ public class PlanetSpawner : MonoBehaviour
             //(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x) * 8;
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-            Instantiate(planetsToSpawn[0], spawnPosition, Quaternion.identity);
+            Instantiate(planetsToSpawn[Random.Range(0, planetsToSpawn.Length)], spawnPosition, Quaternion.identity);
         }
     }
 

@@ -589,14 +589,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809587663}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 843851343}
-  m_Father: {fileID: 1959053154}
-  m_RootOrder: 0
+  m_Father: {fileID: 1271551951}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &830090584
 GameObject:
@@ -1092,6 +1092,7 @@ Transform:
   - {fileID: 98050179}
   - {fileID: 1656102185}
   - {fileID: 592696111}
+  - {fileID: 809587664}
   m_Father: {fileID: 1862755288}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1194,6 +1195,19 @@ MonoBehaviour:
   planetsToSpawn:
   - {fileID: 702026331096985432, guid: 5cdf8dec56076a646968360d45e203b5, type: 3}
   - {fileID: 8653760048169745400, guid: 8953599ab0341f2428cca25e70ea63ec, type: 3}
+  - {fileID: 9040247693041075057, guid: 41235e96858e0144884084d1f0055563, type: 3}
+  - {fileID: 90078430820770507, guid: cdfa31db6ae26aa4dbac7666a18a5a49, type: 3}
+  - {fileID: 106106222072448646, guid: 20d4af2e0ee233b41912bd91e8015218, type: 3}
+  - {fileID: 2256493689766998636, guid: b3e75d58cd30ba54e9ddcc051ac01b84, type: 3}
+  - {fileID: 7858444815040013299, guid: 6314e85d0f67f38438033ce8c6ad44a7, type: 3}
+  - {fileID: 6015697615621234110, guid: b6f1e7504c353f94188ee2d5957a9bbf, type: 3}
+  - {fileID: 5709826189447709638, guid: 637080c82179c5743a845af150795ef0, type: 3}
+  - {fileID: 7606438578646817083, guid: a9ddc5d830106c84c90350b65bed0cf9, type: 3}
+  - {fileID: 5271256375924162579, guid: d24e2fbfd0f28dd45949c8d1c47c20c8, type: 3}
+  - {fileID: 3899539096201275282, guid: 7aeba3c368e812648b1f462855b2b212, type: 3}
+  - {fileID: 8607840967041334270, guid: d6a75230c10d9e644a75728b32f9b636, type: 3}
+  - {fileID: 8570380227594317600, guid: a9d04f27af92ecf4d9f4b77e5a8c4d9e, type: 3}
+  - {fileID: 8530823583589917532, guid: 77ce8e50b8fb80d41812992773e795a9, type: 3}
 --- !u!1 &1419355103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1473,7 @@ GameObject:
   - component: {fileID: 1781194365}
   - component: {fileID: 1781194366}
   - component: {fileID: 1781194367}
+  - component: {fileID: 1781194368}
   m_Layer: 0
   m_Name: AIShip
   m_TagString: Untagged
@@ -1495,9 +1510,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
 --- !u!114 &1781194366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,6 +1553,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1781194368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781194363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb25b05d2c746c44ca39e29ce701532f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862755287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,9 +1633,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.28}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
 --- !u!50 &1862755291
 Rigidbody2D:
   serializedVersion: 4
@@ -1658,8 +1685,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 809587664}
+  m_Children: []
   m_Father: {fileID: 1862755288}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

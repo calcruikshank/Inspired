@@ -11,6 +11,9 @@ public class AIEnemy : MonoBehaviour
     [SerializeField] Transform thrusterEffect;
     Vector3 randomDirection;
     [SerializeField] Transform firePoint1, firePoint2;
+
+    
+
     [SerializeField] Transform laserPrefab;
 
     float range = 30f;
@@ -25,7 +28,12 @@ public class AIEnemy : MonoBehaviour
     [SerializeField] float baseAttackDamage = 10f;
     float currentAttackDamage;
     float bonusAttackDamage;
-    float visionRange = 40f;
+    float visionRange = 60f;
+
+
+    float maxHealth = 200;
+    float currentHealth;
+    
     public enum State
     {
         Roaming,
@@ -40,6 +48,7 @@ public class AIEnemy : MonoBehaviour
         currentShootingRate = shootingRate;
         shotTimer = shootingRate;
         currentAttackDamage = baseAttackDamage;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -75,7 +84,7 @@ public class AIEnemy : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, visionRange);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.transform.GetComponent<Shootable>())
+            if (hitCollider.transform.GetComponent<Shootable>() && hitCollider.transform != this.transform)
             {
                 if (currentClosestObject == null)
                 {
@@ -106,6 +115,8 @@ public class AIEnemy : MonoBehaviour
 
         if (currentTarget == null)
         {
+            randomDirection = Random.insideUnitCircle.normalized;
+            state = State.Roaming;
             return;
         }
         Debug.Log(currentTarget);
@@ -118,10 +129,9 @@ public class AIEnemy : MonoBehaviour
         }
         else
         {
-            //we are within range fire a shot
 
             HandleShoot();
-            //handleshootlogic
+            //handleshotlogic
         }
     }
     void HandleReload()
@@ -137,7 +147,15 @@ public class AIEnemy : MonoBehaviour
 
         }
     }
-
+    internal void TakeDamage(float damageTaken)
+    {
+        Debug.Log(damageTaken + " Taking damage");
+        currentHealth -= damageTaken;
+        if (currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
     void Shoot()
     {
         Transform laser1 = Instantiate(laserPrefab, firePoint1.position, this.transform.rotation);

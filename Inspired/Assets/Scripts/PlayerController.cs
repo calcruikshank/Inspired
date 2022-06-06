@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     float currentRange;
     float bonusRange;
 
-    float shootingRate = 1f;
+    float shootingRate = .75f;
     float currentShootingRate;
     float bonusShootingRate;
     float shotTimer = 1f;
@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     float currentAbilityPower;
     float bonusAbilityPower;
 
+
+    float currentHealth; float maxHealth = 200f;
     Transform currentTarget = null;
     float distanceBetweenPlayerAndTarget;
 
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMoving()
     {
+        
         if ((Vector2)transform.position != lastClickedPosition)
         {
             float step = speed * Time.deltaTime;
@@ -100,6 +103,12 @@ public class PlayerController : MonoBehaviour
 
     void HandleGoingToAndShootingTarget()
     {
+        //just add a little delay to each shot 
+        if (shotTimer < .2f)
+        {
+            return;
+        }
+
         if (currentTarget == null)
         {
             return;
@@ -113,10 +122,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //we are within range fire a shot
-
             HandleShoot();
-            //handleshootlogic
+            //handleshotlogic
         }
     }
     void HandleReload()
@@ -129,7 +136,6 @@ public class PlayerController : MonoBehaviour
         {
             shotTimer = 0f;
             Shoot();
-
         }
     }
 
@@ -157,13 +163,6 @@ public class PlayerController : MonoBehaviour
 
                     SetTarget(shootable.transform);
                 }
-                if (hit.collider.transform.GetComponent<PlayerController>() && hit.collider.transform != this.transform)
-                {
-                }
-                if (hit.collider.transform.GetComponent<AIEnemy>())
-                {
-                }
-                
             }
             else
             {

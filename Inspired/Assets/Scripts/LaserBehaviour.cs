@@ -18,7 +18,7 @@ public class LaserBehaviour : MonoBehaviour
     {
         if (currentTarget != null)
         {
-            if (transform.position != currentTarget.position)
+            if ((transform.position - currentTarget.position).magnitude > 1f)
             {
                 float step = speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
@@ -39,6 +39,7 @@ public class LaserBehaviour : MonoBehaviour
 
     public void SetTarget(Transform sentTarget, float damageSent)
     {
-        currentTarget = sentTarget; damageOfProj = damageSent;
+        currentTarget = sentTarget; 
+        damageOfProj = damageSent;
     }
 }
