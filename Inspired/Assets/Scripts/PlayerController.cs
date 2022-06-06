@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     float bonusShootingRate;
     float shotTimer = 1f;
 
+    float abilityPower = 1f;
+    float currentAbilityPower;
+    float bonusAbilityPower;
+
     Transform currentTarget = null;
     float distanceBetweenPlayerAndTarget;
 
@@ -100,12 +104,12 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        transform.up = currentTarget.position - transform.position;
         distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
         if (distanceBetweenPlayerAndTarget > range)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
-            transform.up = currentTarget.position - transform.position;
         }
         else
         {

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Shootable : MonoBehaviour
 {
-
-    [SerializeField]float health = 60f;
+    protected float startingHealth = 60f;
+    protected float health = 60f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = startingHealth;
     }
 
     // Update is called once per frame
@@ -18,13 +18,11 @@ public class Shootable : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damageTaken)
+    public virtual void TakeDamage(float damageTaken)
     {
-        health -= damageTaken;
-        if (health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
+       
     }
+
+
 
 }
