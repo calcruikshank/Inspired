@@ -1,0 +1,513 @@
+Using pre-set license
+Built from '2021.2/staging' branch; Version is '2021.2.9f1 (921b45a28ab6) revision 9575237'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Core' Language: 'en' Physical Memory: 32694 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.2.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/cocru/Documents/GitHub/Inspired/Inspired
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+64085
+Successfully changed project path to: C:/Users/cocru/Documents/GitHub/Inspired/Inspired
+C:/Users/cocru/Documents/GitHub/Inspired/Inspired
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 95.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.9f1 (921b45a28ab6)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/cocru/Documents/GitHub/Inspired/Inspired/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 Ti (ID=0x2208)
+    Vendor:   NVIDIA
+    VRAM:     12108 MB
+    Driver:   30.0.15.1179
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003746 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 81.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.501 seconds
+Domain Reload Profiling:
+	ReloadAssembly (501ms)
+		BeginReloadAssembly (57ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (381ms)
+			LoadAssemblies (56ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (78ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (21ms)
+			SetupLoadedEditorAssemblies (242ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (113ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006364 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\cocru\Documents\GitHub\Inspired\Inspired\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\cocru\Documents\GitHub\Inspired\Inspired\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 80.49 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.307 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1308ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (1142ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (190ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (804ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (602ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 43 unused Assets / (225.8 KB). Loaded Objects now: 4361.
+Memory consumption went from 147.1 MB to 146.9 MB.
+Total: 3.220600 ms (FindLiveObjects: 0.348300 ms CreateObjectMapping: 0.094400 ms MarkObjects: 2.639000 ms  DeleteObjects: 0.137400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006667 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\cocru\Documents\GitHub\Inspired\Inspired\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\cocru\Documents\GitHub\Inspired\Inspired\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.13 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.978 seconds
+Domain Reload Profiling:
+	ReloadAssembly (979ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (780ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (215ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (406ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (284ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3904 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 32 unused Assets / (192.7 KB). Loaded Objects now: 4363.
+Memory consumption went from 147.1 MB to 146.9 MB.
+Total: 3.152900 ms (FindLiveObjects: 0.332400 ms CreateObjectMapping: 0.085900 ms MarkObjects: 2.605400 ms  DeleteObjects: 0.127700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 146860.361075 seconds.
+  path: Assets/spaceshooter/PNG/Parts
+  artifactKey: Guid(62006a84797c9414984a37beccd8befe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts using Guid(62006a84797c9414984a37beccd8befe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37dade156a539e0884c4b38f58dbe4e0') in 0.008936 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.053257 seconds.
+  path: Assets/spaceshooter/PNG/Parts/beam0.png
+  artifactKey: Guid(0db1c0bdacb162e47bd68fcaf240d4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/beam0.png using Guid(0db1c0bdacb162e47bd68fcaf240d4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633f8ee04e6d6cb5336d98ea90bddbf9') in 0.098792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/spaceshooter/PNG/Parts/turretBase_small.png
+  artifactKey: Guid(1b62f1e5bf9a1dc4a93f4f0dcfdec6e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/turretBase_small.png using Guid(1b62f1e5bf9a1dc4a93f4f0dcfdec6e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2292125f4724097f5f840e314cfc713e') in 0.012602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitYellow_7.png
+  artifactKey: Guid(fd8d5b917e6cdf343b734b66d01502ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitYellow_7.png using Guid(fd8d5b917e6cdf343b734b66d01502ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '168e8222906d3a995180a4f184f7e9ac') in 0.014898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/spaceshooter/PNG/Parts/engine4.png
+  artifactKey: Guid(3f43837f3237e3e41bd74543a2d3861f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/engine4.png using Guid(3f43837f3237e3e41bd74543a2d3861f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf97e9c0fecd0ef38ff9a8b117ae6d63') in 0.016779 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitYellow_4.png
+  artifactKey: Guid(c1faf80c7908e5143af1464240fa6b33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitYellow_4.png using Guid(c1faf80c7908e5143af1464240fa6b33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74d0d740e897d57be87b4216926670bb') in 0.014935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitYellow_6.png
+  artifactKey: Guid(335a9945125581e469d25ac7000778d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitYellow_6.png using Guid(335a9945125581e469d25ac7000778d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d422cd9e8a7a163390f1d87bf19817d') in 0.017507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitGreen_0.png
+  artifactKey: Guid(b5999be9017764c48ad35206b08616b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitGreen_0.png using Guid(b5999be9017764c48ad35206b08616b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b7f03449cb5d23d011ba990afabe2b4') in 0.013355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/spaceshooter/PNG/Parts/beamLong2.png
+  artifactKey: Guid(00419738ab6da6249a844a04e33c5d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/beamLong2.png using Guid(00419738ab6da6249a844a04e33c5d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d84bd45e7b0267be93632f35ffbb5a') in 0.014848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingBlue_6.png
+  artifactKey: Guid(9c99027d0eaf85347b93d514ea6be94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingBlue_6.png using Guid(9c99027d0eaf85347b93d514ea6be94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ab2aa0fb4cfcab7a69872fc98886adb') in 0.016593 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/scratch3.png
+  artifactKey: Guid(704ecc78d36a05141becc123241c464a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/scratch3.png using Guid(704ecc78d36a05141becc123241c464a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad7b684f22d0987b17c0b1183548998b') in 0.016050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitRed_6.png
+  artifactKey: Guid(818f09161d91d53478d12bc79bd2c205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitRed_6.png using Guid(818f09161d91d53478d12bc79bd2c205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bf9582b5af7dea0cc4c41eb349aa612') in 0.015964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingRed_0.png
+  artifactKey: Guid(8bef93f9ac153bc4aa50c92edfb56ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingRed_0.png using Guid(8bef93f9ac153bc4aa50c92edfb56ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7c2d751dc350beaa8f3944f24452f7') in 0.019290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingRed_7.png
+  artifactKey: Guid(8699aa377fe8b4549bb9921c6dedc1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingRed_7.png using Guid(8699aa377fe8b4549bb9921c6dedc1ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79ad2e40e28a1deec2f713d30afbc81d') in 0.014565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitRed_7.png
+  artifactKey: Guid(24563693f1b3e3848bcc370dc378a331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitRed_7.png using Guid(24563693f1b3e3848bcc370dc378a331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e0285eb83a2c5f4e85c09d5a0f66ba3') in 0.032367 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/spaceshooter/PNG/Parts/beam5.png
+  artifactKey: Guid(d9563bdbfe389cf4b826a8d410d14f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/beam5.png using Guid(d9563bdbfe389cf4b826a8d410d14f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6608bbff102ef070c358d3711988547') in 0.013980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_0.png
+  artifactKey: Guid(1d67be02e5f872c48baf97b459629ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_0.png using Guid(1d67be02e5f872c48baf97b459629ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac4804e79b0afdac8b40e4249701afa') in 0.012937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_4.png
+  artifactKey: Guid(54505565b6e35ea41b82f80cbcab1d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_4.png using Guid(54505565b6e35ea41b82f80cbcab1d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2aaf636b08122b99aed4c84378e2823') in 0.013796 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitRed_5.png
+  artifactKey: Guid(aae65e6cacacc4f409f13ff5b774748d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitRed_5.png using Guid(aae65e6cacacc4f409f13ff5b774748d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67f8d3a5db43124da7b2558b3e12696b') in 0.013572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_5.png
+  artifactKey: Guid(e4cb6321906de9c46a4e3cb0755d45d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_5.png using Guid(e4cb6321906de9c46a4e3cb0755d45d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d0e016215504ed60ef17634709fc113') in 0.013827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/turretBase_big.png
+  artifactKey: Guid(d80b0ff8549262041a30161fd79a3fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/turretBase_big.png using Guid(d80b0ff8549262041a30161fd79a3fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6626893b9e0b3fee6a7cd3fcf402cfc') in 0.013560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/spaceshooter/PNG/Parts/engine2.png
+  artifactKey: Guid(0781b1a64de8ff94ca12b0cb05831cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/engine2.png using Guid(0781b1a64de8ff94ca12b0cb05831cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3341d2d3ae4a982dfc6c87ab660b57c6') in 0.013626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_3.png
+  artifactKey: Guid(5c63754d643d6ed4abb1d0518d157bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_3.png using Guid(5c63754d643d6ed4abb1d0518d157bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e7c9e709cc1b019db241b9da0e2c031') in 0.013532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitRed_0.png
+  artifactKey: Guid(0da50d777b58dff48ad85328951c8610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitRed_0.png using Guid(0da50d777b58dff48ad85328951c8610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36f4be2b29e05fc28b1beb3fc8c40479') in 0.013053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitYellow_3.png
+  artifactKey: Guid(8d225589131548e4a8ebabe05be861ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitYellow_3.png using Guid(8d225589131548e4a8ebabe05be861ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2047cf77549285d737242786d10177ac') in 0.012591 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingBlue_2.png
+  artifactKey: Guid(731e4a11a8e47e94889a507ef4abaf88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingBlue_2.png using Guid(731e4a11a8e47e94889a507ef4abaf88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a3c8af339fc46ea2bc133cd7ac9bbda') in 0.013610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun01.png
+  artifactKey: Guid(7c4ba8135204725488b29c9bb61c6201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun01.png using Guid(7c4ba8135204725488b29c9bb61c6201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df115bdc12b0fdb7d7c7733a41cb6a7') in 0.014014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun07.png
+  artifactKey: Guid(694ebddfcd64ff9468fa7722631376d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun07.png using Guid(694ebddfcd64ff9468fa7722631376d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c4b5aa23b39590f22d20481dbfa47ac') in 0.014539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingBlue_0.png
+  artifactKey: Guid(c7cd260037a6d10408653150068278fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingBlue_0.png using Guid(c7cd260037a6d10408653150068278fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a74c701515f9c061ee9058dd5331bf7') in 0.012085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_2.png
+  artifactKey: Guid(9bfb203fc1d8567459b05197f719e7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_2.png using Guid(9bfb203fc1d8567459b05197f719e7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdf2fc0022dde2a8e9547b4f72365066') in 0.012422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitBlue_3.png
+  artifactKey: Guid(ff863a1ce8c751a48b98f0b6d0fba576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitBlue_3.png using Guid(ff863a1ce8c751a48b98f0b6d0fba576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff3787ca7fc2e41bf4b84bb730c36ddc') in 0.013428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun00.png
+  artifactKey: Guid(2bc670cf25345354db9a841f63d21f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun00.png using Guid(2bc670cf25345354db9a841f63d21f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82ba702921ede18ce3d93f197d53133a') in 0.013501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitGreen_5.png
+  artifactKey: Guid(47a2d90f1c5bc824a9354cd3203ad60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitGreen_5.png using Guid(47a2d90f1c5bc824a9354cd3203ad60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24244cc1af2d05fd6d107c4e274b9ea8') in 0.013177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun09.png
+  artifactKey: Guid(dfb753f55519728448e082c884fe0d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun09.png using Guid(dfb753f55519728448e082c884fe0d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '631ce59f7112992d48e9be9e94e8d6e6') in 0.014170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingGreen_6.png
+  artifactKey: Guid(3ec49e565f3014249aeef2785407d120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingGreen_6.png using Guid(3ec49e565f3014249aeef2785407d120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd65283d5bb144ffa96a6922e64fdc375') in 0.013427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitBlue_7.png
+  artifactKey: Guid(d7a54ff1b33f64a4785198b9eab0a273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitBlue_7.png using Guid(d7a54ff1b33f64a4785198b9eab0a273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e35dfa1971ba54bbe1dd5bc7169172f') in 0.013709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingRed_2.png
+  artifactKey: Guid(40b8afe3179f45d4f91efa46d1cccc27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingRed_2.png using Guid(40b8afe3179f45d4f91efa46d1cccc27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83956a21b2f44eb5de9e5adb8d7290c9') in 0.012545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitYellow_1.png
+  artifactKey: Guid(1cadc19446e7a1d48b638dd594a136c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitYellow_1.png using Guid(1cadc19446e7a1d48b638dd594a136c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d491928d4b571a7f0cd146de74257e5') in 0.013086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitGreen_6.png
+  artifactKey: Guid(ab2a682140b66eb409a24efe6c0e1573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitGreen_6.png using Guid(ab2a682140b66eb409a24efe6c0e1573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c60deb62cf4b8ae5cc7c536592509f') in 0.011918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun02.png
+  artifactKey: Guid(e6ce639a078a89e4da01728f58fade2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun02.png using Guid(e6ce639a078a89e4da01728f58fade2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfe98eadf6dfd97a17660dccae5560f') in 0.013087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitGreen_4.png
+  artifactKey: Guid(963dc631e90b9644d93ee7b446b69f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitGreen_4.png using Guid(963dc631e90b9644d93ee7b446b69f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7910dc5152b21c22273bb5ab4d40a155') in 0.013200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitBlue_0.png
+  artifactKey: Guid(4e673c0350f61f545b72bcd09d0a58a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitBlue_0.png using Guid(4e673c0350f61f545b72bcd09d0a58a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2af9ecc0779b3e1e97254421a1b8b1a3') in 0.012587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/spaceshooter/PNG/Parts/cockpitGreen_2.png
+  artifactKey: Guid(ed94ac30f04a7354c9fb0e4a420d7aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/cockpitGreen_2.png using Guid(ed94ac30f04a7354c9fb0e4a420d7aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa21d7dc0a9de2aebec4cd1246bd3de4') in 0.011980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/spaceshooter/PNG/Parts/gun04.png
+  artifactKey: Guid(a17821b3fdfbe4b4790774fee68535bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/gun04.png using Guid(a17821b3fdfbe4b4790774fee68535bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b59157c9672ddc77bc94d09609fd11c9') in 0.012688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingBlue_3.png
+  artifactKey: Guid(32d46ec4e7de21341a12fa425d7c28be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingBlue_3.png using Guid(32d46ec4e7de21341a12fa425d7c28be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd55080b08b14c07236bccae1a4227785') in 0.012233 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.630019 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingYellow_0.png
+  artifactKey: Guid(4be3b049de6cd31488f019248469c8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingYellow_0.png using Guid(4be3b049de6cd31488f019248469c8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7bef5008d03d3d08e6251a93b1d3ebe') in 0.015612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingYellow_5.png
+  artifactKey: Guid(1746de20df8e4ac468274c9d7b2de2b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingYellow_5.png using Guid(1746de20df8e4ac468274c9d7b2de2b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '986e1f4ab36cd2ac9c77079142f79e1c') in 0.033758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingYellow_3.png
+  artifactKey: Guid(2cd2b4a8279ef7d469b34a833327ea64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingYellow_3.png using Guid(2cd2b4a8279ef7d469b34a833327ea64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a47b6445ef13a9c00d8897721169f9') in 0.012982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/spaceshooter/PNG/Parts/wingYellow_7.png
+  artifactKey: Guid(1ada7954b7d8a9540b3ccb291ac7e7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/spaceshooter/PNG/Parts/wingYellow_7.png using Guid(1ada7954b7d8a9540b3ccb291ac7e7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3e68a857e1a0ff8faa3c33cd887c0fb') in 0.013475 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
