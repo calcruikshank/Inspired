@@ -22,11 +22,14 @@ public class PlayerController : MonoBehaviour
     float currentRange;
     float bonusRange;
 
-    [SerializeField] float shootingRate = 10f;
+    float shootingRate = .5f;
     float currentShootingRate;
     float bonusShootingRate;
+    float shotTimer = .5f;
 
     Transform currentTarget = null;
+    float distanceBetweenPlayerAndTarget;
+
 
     public State state;
     public enum State
@@ -35,6 +38,12 @@ public class PlayerController : MonoBehaviour
         ShootableTargeted
     }
 
+
+    private void Awake()
+    {
+        currentShootingRate = shootingRate;
+        shotTimer = shootingRate;
+    }
     void Update()
     {
         switch (state)
@@ -42,10 +51,12 @@ public class PlayerController : MonoBehaviour
             case State.Normal:
                 HandleInput();
                 HandleMoving();
+                HandleReload();
                 break;
             case State.ShootableTargeted:
                 HandleInput();
                 HandleGoingToAndShootingTarget();
+                HandleReload();
                 break;
         }
     }
@@ -84,8 +95,11 @@ public class PlayerController : MonoBehaviour
 
     void HandleGoingToAndShootingTarget()
     {
-        float distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
-        Debug.Log(distanceBetweenPlayerAndTarget);
+        if (currentTarget == null)
+        {
+            return;
+        }
+        distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
         if (distanceBetweenPlayerAndTarget > range)
         {
             float step = speed * Time.deltaTime;
@@ -96,14 +110,30 @@ public class PlayerController : MonoBehaviour
         {
             //we are within range fire a shot
 
-            Shoot();
+            HandleShoot();
             //handleshootlogic
+        }
+    }
+    void HandleReload()
+    {
+        shotTimer += Time.deltaTime;
+    }
+    void HandleShoot()
+    {
+        if (shotTimer > currentShootingRate)
+        {
+            shotTimer = 0f;
+            Shoot();
+
         }
     }
 
     void Shoot()
     {
-
+        Transform laser1 = Instantiate(laserPrefab, firePoint1.position, this.transform.rotation);
+        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget);
+        Transform laser2 = Instantiate(laserPrefab, firePoint2.position, this.transform.rotation);
+        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget);
     }
 
     private void HandleInput()
