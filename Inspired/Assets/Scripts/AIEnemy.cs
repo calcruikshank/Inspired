@@ -78,7 +78,6 @@ public class AIEnemy : MonoBehaviour
 
     void ScanForItemsWithinRange()
     {
-        Debug.Log(state);
         float currentClosestObjectMag = 0f;
         Transform currentClosestObject = null;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, visionRange);
@@ -163,4 +162,6 @@ public class AIEnemy : MonoBehaviour
         Transform laser2 = Instantiate(laserPrefab, firePoint2.position, this.transform.rotation);
         laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
     }
+
+
 }

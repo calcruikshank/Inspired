@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
     public enum State
     {
         Normal,
-        ShootableTargeted
+        ShootableTargeted,
+        AbilityInUse
     }
 
 
@@ -64,6 +65,9 @@ public class PlayerController : MonoBehaviour
                 HandleInput();
                 HandleGoingToAndShootingTarget();
                 HandleReload();
+                break;
+            case State.AbilityInUse:
+                HandleAbility();
                 break;
         }
     }
@@ -174,19 +178,28 @@ public class PlayerController : MonoBehaviour
             lastClickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             lastLookPosition = lastClickedPosition - (Vector2)transform.position;
         }
-
-        
     }
 
+    void HandleAbility()
+    {
+
+    }
     void SetTarget(Transform targetSent)
     {
         this.currentTarget = targetSent;
         state = State.ShootableTargeted;
     }
 
-    void SetStateToNormal()
+    public void SetStateToNormal()
     {
+        lastClickedPosition = transform.position;
         currentTarget = null;
         state = State.Normal;
+    }
+
+
+    public void SetStateToAbilityInUse()
+    {
+        state = State.AbilityInUse;
     }
 }
