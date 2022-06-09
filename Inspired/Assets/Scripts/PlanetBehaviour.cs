@@ -17,6 +17,8 @@ public class PlanetBehaviour : Shootable
 
             this.transform.position = new Vector2(spawnX, spawnY);
             health = startingHealth;*/
+            this.GetComponent<PowerUpGenerator>().InstantiateRandomPowerUps();
+            PlanetSpawner.singleton.SpawnRandomPlanet();
             Destroy(this.gameObject);
         }
     }

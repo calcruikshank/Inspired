@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float speed = 20f;
     [SerializeField] Transform thrusterEffect;
 
     Vector2 lastClickedPosition;
@@ -14,29 +13,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform firePoint1, firePoint2;
     [SerializeField] Transform laserPrefab;
 
-    [SerializeField] float baseAttackDamage = 10f;
-    float currentAttackDamage;
-    float bonusAttackDamage;
+    Stats stats;
 
-    float range = 30f;
-    float currentRange;
-    float bonusRange;
-
-    float shootingRate = .75f;
-    float currentShootingRate;
-    float bonusShootingRate;
-    float shotTimer = 1f;
-
-    float abilityPower = 1f;
-    float currentAbilityPower;
-    float bonusAbilityPower;
-
-
-    float currentHealth; float maxHealth = 200f;
     Transform currentTarget = null;
     float distanceBetweenPlayerAndTarget;
 
-
+    float shotTimer;
     public State state;
     public enum State
     {
@@ -48,9 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        currentShootingRate = shootingRate;
-        shotTimer = shootingRate;
-        currentAttackDamage = baseAttackDamage;
+        stats = this.GetComponent<Stats>();
+        shotTimer = stats.fireRate;
     }
     void Update()
     {
@@ -88,7 +69,7 @@ public class PlayerController : MonoBehaviour
         
         if ((Vector2)transform.position != lastClickedPosition)
         {
-            float step = speed * Time.deltaTime;
+            float step = stats.moveSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, lastClickedPosition, step);
 
             transform.up = lastLookPosition;
@@ -108,10 +89,7 @@ public class PlayerController : MonoBehaviour
     void HandleGoingToAndShootingTarget()
     {
         //just add a little delay to each shot 
-        if (shotTimer < .2f)
-        {
-            return;
-        }
+       
 
         if (currentTarget == null)
         {
@@ -119,10 +97,13 @@ public class PlayerController : MonoBehaviour
         }
         transform.up = currentTarget.position - transform.position;
         distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
-        if (distanceBetweenPlayerAndTarget > range)
+        if (distanceBetweenPlayerAndTarget > stats.range)
         {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
+            float step = stats.moveSpeed * Time.deltaTime;
+            if (shotTimer > .2f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
+            }
         }
         else
         {
@@ -136,7 +117,7 @@ public class PlayerController : MonoBehaviour
     }
     void HandleShoot()
     {
-        if (shotTimer > currentShootingRate)
+        if (shotTimer > stats.fireRate)
         {
             shotTimer = 0f;
             Shoot();
@@ -146,9 +127,9 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         Transform laser1 = Instantiate(laserPrefab, firePoint1.position, this.transform.rotation);
-        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
+        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget, stats.attackPower);
         Transform laser2 = Instantiate(laserPrefab, firePoint2.position, this.transform.rotation);
-        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
+        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, stats.attackPower);
     }
 
     private void HandleInput()
@@ -201,5 +182,10 @@ public class PlayerController : MonoBehaviour
     public void SetStateToAbilityInUse()
     {
         state = State.AbilityInUse;
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        stats.currentHealth -= damageTaken;
     }
 }

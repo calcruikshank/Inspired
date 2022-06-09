@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2256493689766998637}
   - component: {fileID: 2256493689766998639}
   - component: {fileID: 2256493689766998638}
+  - component: {fileID: 8467943803219044429}
   m_Layer: 0
   m_Name: Ice-Planet
   m_TagString: Untagged
@@ -114,3 +115,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.12
+--- !u!114 &8467943803219044429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256493689766998642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfad57e238112a342b80fab3657aeba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potentialBasePowerUps:
+  - {fileID: 7882586550091322643, guid: 5daf0ccf96c8f2241bd81ca0d61fd9ac, type: 3}
+  - {fileID: 840418404502994520, guid: 908c4edd506bb3345a17fa609b0f6cec, type: 3}
+  - {fileID: 8484525844008445369, guid: 251745cc5da6d414f9bc7ec75c878e5e, type: 3}
+  - {fileID: 4503134098269320355, guid: 9ca80491102a8964b81a9d0d3a3c4920, type: 3}

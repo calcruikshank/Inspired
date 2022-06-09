@@ -6,49 +6,45 @@ public class AIEnemy : MonoBehaviour
 {
     public State state;
 
-    [SerializeField] float speed = 20f;
 
     [SerializeField] Transform thrusterEffect;
     Vector3 randomDirection;
     [SerializeField] Transform firePoint1, firePoint2;
 
-    
+
+    Stats stats;
 
     [SerializeField] Transform laserPrefab;
 
-    float range = 30f;
-    float currentRange;
-    float bonusRange;
-    float shootingRate = 1f;
-    float currentShootingRate;
-    float bonusShootingRate;
+    
     float shotTimer = 1f;
     Transform currentTarget = null;
     float distanceBetweenPlayerAndTarget;
     [SerializeField] float baseAttackDamage = 10f;
-    float currentAttackDamage;
-    float bonusAttackDamage;
+
+    float randomSelectionTime;
+    float selectionShotTimer = 0f;
+    bool hasSelectedRandomTimeToWaitWhenShootableIsWithinRange = false;
     float visionRange = 60f;
-
-
-    float maxHealth = 200;
-    float currentHealth;
     
     public enum State
     {
         Roaming,
         ShootableTargeted,
-        PlayerWithinRange
+        PlayerWithinRange,
+        ConsumableTargeted
+    }
+
+    private void Awake()
+    {
+        stats = this.GetComponent<Stats>();
     }
     // Start is called before the first frame update
     void Start()
     {
         randomDirection = Random.insideUnitCircle.normalized;
         state = State.Roaming;
-        currentShootingRate = shootingRate;
-        shotTimer = shootingRate;
-        currentAttackDamage = baseAttackDamage;
-        currentHealth = maxHealth;
+        shotTimer = stats.fireRate;
     }
 
     void Update()
@@ -64,12 +60,16 @@ public class AIEnemy : MonoBehaviour
                 HandleGoingToAndShootingTarget();
                 HandleReload();
                 break;
+            case State.ConsumableTargeted:
+                HandleGoingToConsumable();
+                HandleReload();
+                break;
         }
     }
 
     void HandleMovement()
     {
-        float step = speed * Time.deltaTime;
+        float step = stats.moveSpeed * Time.deltaTime;
         transform.position += randomDirection * step;
 
         transform.up = randomDirection;
@@ -78,57 +78,82 @@ public class AIEnemy : MonoBehaviour
 
     void ScanForItemsWithinRange()
     {
-        float currentClosestObjectMag = 0f;
-        Transform currentClosestObject = null;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, visionRange);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.transform.GetComponent<Shootable>() && hitCollider.transform != this.transform)
+            if (hitCollider.transform.GetComponent<PowerUp>() && hitCollider.transform != this.transform)
             {
-                if (currentClosestObject == null)
-                {
-                    currentClosestObjectMag = (hitCollider.transform.position - this.transform.position).magnitude;
-                    currentClosestObject = hitCollider.transform;
-                }
-                if ((hitCollider.transform.position - this.transform.position).magnitude < currentClosestObjectMag)
-                {
-                    currentClosestObjectMag = (hitCollider.transform.position - this.transform.position).magnitude;
-                    currentClosestObject = hitCollider.transform;
-                }
-                Debug.Log(hitColliders.Length);
-                if (currentClosestObject != null)
-                {
-                    SetTarget(currentClosestObject);
-                }
+                TargetConsumable(hitCollider.transform);
+                return;
             }
+            if (hitCollider.transform.GetComponent<PlanetBehaviour>() && hitCollider.transform != this.transform)
+            {
+                SetTarget(hitCollider.transform);
+                return;
+            }
+            if (hitCollider.transform.GetComponent<PlayerShootable>() && hitCollider.transform != this.transform || hitCollider.transform.GetComponent<AIEnemy>() && hitCollider.transform != this.transform)
+            {
+                SetTarget(hitCollider.transform);
+                return;
+            }
+            
         }
         
+    }
+    void TargetConsumable(Transform targetSent)
+    {
+        this.currentTarget = targetSent;
+        state = State.ConsumableTargeted;
     }
     void SetTarget(Transform targetSent)
     {
         this.currentTarget = targetSent;
         state = State.ShootableTargeted;
     }
-    void HandleGoingToAndShootingTarget()
+    void HandleGoingToConsumable()
     {
-
         if (currentTarget == null)
         {
             randomDirection = Random.insideUnitCircle.normalized;
             state = State.Roaming;
             return;
         }
-        Debug.Log(currentTarget);
         transform.up = currentTarget.position - transform.position;
         distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
-        if (distanceBetweenPlayerAndTarget > range)
+        if (distanceBetweenPlayerAndTarget > 1f)
         {
-            float step = speed * Time.deltaTime;
+            float step = stats.moveSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
+        }
+    }
+    void HandleGoingToAndShootingTarget()
+    {
+        
+        if (currentTarget == null)
+        {
+            randomDirection = Random.insideUnitCircle.normalized;
+            state = State.Roaming;
+            return;
+        }
+        transform.up = currentTarget.position - transform.position;
+        distanceBetweenPlayerAndTarget = (currentTarget.position - transform.position).magnitude;
+        if (distanceBetweenPlayerAndTarget > stats.range)
+        {
+            hasSelectedRandomTimeToWaitWhenShootableIsWithinRange = false;
+            float step = stats.moveSpeed * Time.deltaTime;
+            if (shotTimer > 1f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, step);
+            }
         }
         else
         {
-
+            if (hasSelectedRandomTimeToWaitWhenShootableIsWithinRange == false)
+            {
+                randomSelectionTime = Random.Range(0, .5f);
+                hasSelectedRandomTimeToWaitWhenShootableIsWithinRange = true;
+                selectionShotTimer = 0f;
+            }
             HandleShoot();
             //handleshotlogic
         }
@@ -139,28 +164,37 @@ public class AIEnemy : MonoBehaviour
     }
     void HandleShoot()
     {
-        if (shotTimer > currentShootingRate)
+        selectionShotTimer += Time.deltaTime;
+        if (selectionShotTimer > randomSelectionTime)
         {
-            shotTimer = 0f;
-            Shoot();
+            if (shotTimer > stats.fireRate)
+            {
+                shotTimer = 0f;
+                Shoot();
 
+            }
         }
+        
     }
     internal void TakeDamage(float damageTaken)
     {
-        Debug.Log(damageTaken + " Taking damage");
-        currentHealth -= damageTaken;
-        if (currentHealth <= 0)
+        if (stats.currentHealth <= 0)
         {
+            return;
+        }
+        stats.currentHealth -= damageTaken;
+        if (stats.currentHealth <= 0)
+        {
+            AISpawner.singleton.SpawnRandomEnemy();
             Destroy(this.gameObject);
         }
     }
     void Shoot()
     {
         Transform laser1 = Instantiate(laserPrefab, firePoint1.position, this.transform.rotation);
-        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
+        laser1.GetComponent<LaserBehaviour>().SetTarget(currentTarget, stats.attackPower);
         Transform laser2 = Instantiate(laserPrefab, firePoint2.position, this.transform.rotation);
-        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, currentAttackDamage);
+        laser2.GetComponent<LaserBehaviour>().SetTarget(currentTarget, stats.attackPower);
     }
 
 
